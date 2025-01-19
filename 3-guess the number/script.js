@@ -1,5 +1,5 @@
 let randomNumber = Math.floor(Math.random() * 100 + 1);
-let numberOfTries = 0; //برای اینکه تعداد حدس ها را محاسبه کنیم
+let numberOfTries = 0;
 const maxTries = 10;
 
 function guessNumber() {
@@ -11,13 +11,12 @@ function guessNumber() {
 
   //If the user inputs a bad input ie 0, empty string, number greater that 100, number less than zero Print "Please enter a number between 1 and 100"
   if (guess === "" || isNaN(guess) || guess < 1 || guess > 100) {
-    //چک میکنیم عدد بین 0 تا 100 باشد و حتما عدد باشد
     output.textContent = "Please enter a number between 1 and 100";
     return;
   }
-  numberOfTries++; //اگر مشکلی نداشت و عدد بود یک حدس به تعداد حدس ها اضافه شود
-  let remainingTries = maxTries - numberOfTries; //تعداد حدس های باقس مانده محاسبه شود
-  triesOutput.textContent = `Remaining tries: ${remainingTries}`; // تعداد حدس های باقی مانده نمایش داده شود
+  numberOfTries++;
+  let remainingTries = maxTries - numberOfTries;
+  triesOutput.textContent = `Remaining tries: ${remainingTries}`;
 
   //If the users guess is higher than the random number print Number is too high, try again (hint use .final-out class to print)
   //If the users guess is lower than the random number print Number is too low, try again  (hint use .final-out class to print)
